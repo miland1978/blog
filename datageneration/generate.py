@@ -19,9 +19,8 @@ def generate(filename, count, locale):
     person = Personal(locale)
     with open(filename, 'wt') as file:
         for i in range(count):
-            file.write('{0}|{1}|{2}|{3}|{4}|{5}\n'.format(i, uuid.uuid4().hex, person.name(),
-                                                          person.surname(), person.email(),
-                                                          person.age()))
+            print(i, uuid.uuid4().hex, person.name(), person.surname(), person.email(),
+                  person.age(), sep='|', file=file)
 
 if __name__ == '__main__':
     vals = parse_args()
