@@ -1,0 +1,1 @@
+Comparison of [testify/mock](https://github.com/stretchr/testify) and [gomock](https://github.com/golang/mock) mocking big and complex interface [S3API](https://github.com/aws/aws-sdk-go/blob/master/service/s3/s3iface/interface.go#L62-L397), performance- and size-wise. 

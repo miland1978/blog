@@ -1,0 +1,1 @@
+Various code excerpts published, or even not published on my blog.

@@ -1,0 +1,1 @@
+A shy attempt of test data generation with [mimesis](https://github.com/lk-geimfari/mimesis).
