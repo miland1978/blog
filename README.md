@@ -1,1 +1,1 @@
-Various code excerpts published, or even not published on my blog.
+Various code excerpts published, or even not published on [my blog](http://www.andrewmiliy.com/).
