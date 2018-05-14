@@ -29,7 +29,7 @@ func main() {
 	defer cancel()
 	r, err := c.GetFullCatalog(ctx, &pb.GetCatalogRequest{})
 	if err != nil {
-		log.Fatalf("could not greet: %v", err)
+		log.Fatalf("could not get full catalog: %v", err)
 	}
 	buf, err := json.MarshalIndent(r, "", "\t")
 	if err != nil {
