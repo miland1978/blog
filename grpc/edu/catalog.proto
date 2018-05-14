@@ -1,0 +1,67 @@
+// Copyright DI Miliy Andrew 2018 All Rights Reserved.
+
+syntax = "proto3";
+
+// option java_multiple_files = true;
+// option java_package = "com.andrewmiliy.edu";
+// option java_outer_classname = "EduProto";
+
+package edu;
+
+// catalog service definition
+service Catalog {
+   rpc GetFullCatalog (GetCatalogRequest) returns (GetCatalogReply) {}
+   rpc ListCatalog (GetCatalogRequest) returns (GetCatalogReply) {}
+   rpc GetCourse(GetCourseRequest) returns (GetCourseReply) {}
+}
+
+message GetCatalogRequest {
+}
+
+message GetCatalogReply {
+  repeated Course courses = 1;
+}
+
+message GetCourseRequest {
+    uint64 course_id = 1;
+}
+
+message GetCourseReply {
+    Course course = 1;
+}
+
+message Lesson {
+    uint64 id = 1;
+    string name = 2;
+    float position = 3;
+    string content = 4;
+    string published_utc = 5;
+    uint64 created_by = 6;
+    uint64 updated_by = 7;
+    string updated_utc = 8;
+    bool deleted = 9;
+}
+
+message Chapter {
+    uint64 id = 1;
+    string name = 2;
+    float position = 3;
+    string published_utc = 4;
+    uint64 created_by = 5;
+    uint64 updated_by = 6;
+    string updated_utc = 7;
+    bool deleted = 8;
+    repeated Lesson lessons = 9;
+}
+
+message Course {
+    uint64 id = 1;
+    string name = 2;
+    string decription = 3;
+    string published_utc = 4;
+    uint64 created_by = 5;
+    uint64 updated_by = 6;
+    string updated_utc = 7;
+    bool deleted = 8;
+    repeated Chapter Chapters = 9;
+}
