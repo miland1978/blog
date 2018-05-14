@@ -1,6 +1,6 @@
 // Copyright DI Miliy Andrew 2018 All Rights Reserved.
 
-//go:generate protoc -I ../edu --go_out=plugins=grpc:../edu ../edu/catalog.proto
+//go:generate protoc -I ../edu/ --go_out=plugins=grpc:../edu ../edu/catalog.proto
 
 package main
 
