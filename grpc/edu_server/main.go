@@ -20,12 +20,16 @@ const (
 
 type server struct{}
 
-func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
+func (s *server) GetFullCatalog(context.Context, *pb.GetCatalogRequest) (*pb.GetCatalogReply, error) {
+	return &pb.GetCatalogReply{}, nil
 }
 
-func (s *server) SayHelloAgain(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	return &pb.HelloReply{Message: "Hello again " + in.Name}, nil
+func (s *server) ListCatalog(context.Context, *pb.GetCatalogRequest) (*pb.GetCatalogReply, error) {
+	return &pb.GetCatalogReply{}, nil
+}
+
+func (s *server) GetCourse(context.Context, *pb.GetCourseRequest) (*pb.GetCourseReply, error) {
+	return &pb.GetCourseReply{}, nil
 }
 
 func main() {
@@ -34,7 +38,7 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
-	pb.RegisterGreeterServer(s, &server{})
+	pb.RegisterCatalogServer(s, &server{})
 	reflection.Register(s)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
